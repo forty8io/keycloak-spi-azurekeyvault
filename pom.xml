@@ -4,17 +4,24 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.forty8</groupId>
+    <groupId>md.alejandro</groupId>
     <artifactId>spi-keycloak-azurekeyvault</artifactId>
     <version>1.0.0</version>
-    
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
-        <keycloak.version>26.0.5</keycloak.version>
+        <version.org.keycloak>26.0.5</version.org.keycloak>
         <version.org.jboss.logging>3.4.1.Final</version.org.jboss.logging>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>maven_central</id>
+            <name>Maven Central</name>
+            <url>https://repo.maven.apache.org/maven2/</url>
+        </repository>
+    </repositories>
 
     <build>
         <plugins>

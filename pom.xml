@@ -4,13 +4,14 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>md.alejandro</groupId>
+    <groupId>io.forty8</groupId>
     <artifactId>spi-keycloak-azurekeyvault</artifactId>
     <version>1.0.0</version>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
-        <version.org.keycloak>19.0.1</version.org.keycloak>
+        <keycloak.version>26.0.5</keycloak.version>
         <version.org.jboss.logging>3.4.1.Final</version.org.jboss.logging>
     </properties>
 
@@ -27,19 +28,17 @@
             </plugin>
 
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.3.0</version>
+                <version>3.7.1</version>
                 <configuration>
-                    <descriptors>
-                        <descriptor>src/assembly/assemblyModule.xml</descriptor>
-                    </descriptors>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
                 </configuration>
                 <executions>
                     <execution>
-                        <id>make-assembly</id>
+                        <id>assemble-all</id>
                         <phase>package</phase>
                         <goals>
                             <goal>single</goal>
@@ -85,12 +84,4 @@
         </dependency>
 
     </dependencies>
-
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub OWNER Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/amd989/keycloak-spi-azurekeyvault</url>
-        </repository>
-    </distributionManagement>
 </project>

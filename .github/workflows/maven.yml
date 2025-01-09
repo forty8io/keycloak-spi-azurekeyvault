@@ -18,8 +18,7 @@ jobs:
           cache: maven
       - name: Build Plugin
         run: mvn -B package --file pom.xml
-      - name: Build Theme
-        run: mvn -B package --file theme/pom.xml
+
       - name: Extract Version
         run: |
           echo "RELEASE_VERSION=v$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
